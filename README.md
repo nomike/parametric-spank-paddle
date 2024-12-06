@@ -7,4 +7,4 @@ Features spikes one one side and embossed text on the other.
 
 #### GitHub
 
-<>
+<https://github.com/nomike/parametric-spank-paddle>
