@@ -35,8 +35,6 @@ spike_padding = 5;
 epsilon = 0.001;
 
 // Calculated values
-_grip_radius = grip_diameter / 2;
-_grip_inner_circle_radius = _grip_radius * cos(180/grip_fn);
 _spike_count_x = floor((paddle_width - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 _spike_count_y = floor((paddle_length - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 _grip_factor = paddle_width / 70; // The grip originally was designed for a 70mm wide paddle. This factor scales the grip to the paddle width.
