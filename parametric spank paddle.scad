@@ -1,5 +1,5 @@
 /* [General] */
-$fn = $preview ? 20 : 12;
+$fn = $preview ? 20 : 64;
 
 /* [Grip] */
 grip_length = 95;
