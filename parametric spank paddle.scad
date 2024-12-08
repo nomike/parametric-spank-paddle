@@ -62,7 +62,7 @@ difference() {
     union() {
         // Grip v2
         difference() {
-            scale([_grip_factor, 1, 1]) translate([0, grip_length + grip_end_length + paddle_corner_radius + 4, grip_diameter / 2]) rotate([90, 0, 0]) rotate_extrude(angle=360, convexity=2)
+            scale([_grip_factor, 1, 1]) translate([0, grip_length + grip_end_length + paddle_corner_radius + 4, paddle_thickness / 2]) rotate([90, 0, 0]) rotate_extrude(angle=360, convexity=2)
                 translate([35, 0, 0]) 
                 rotate([0, 0, 90])
                 mirror([0, 0, 0]) import("handle.svg");
