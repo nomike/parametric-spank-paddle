@@ -15,6 +15,7 @@ grip_hole_y_offset = -20;
 paddle_width = 70;
 paddle_length = 154;
 paddle_corner_radius = 10;
+paddle_thickness = 15;
 
 /* [Paddle text] */
 paddle_text = "XOXO";
@@ -36,7 +37,6 @@ epsilon = 0.001;
 // Calculated values
 _grip_radius = grip_diameter / 2;
 _grip_inner_circle_radius = _grip_radius * cos(180/grip_fn);
-_grip_height_from_plate = _grip_inner_circle_radius + ((grip_fn % 2) == 0 ? _grip_inner_circle_radius : (grip_diameter / 2));
 _spike_count_x = floor((paddle_width - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 _spike_count_y = floor((paddle_length - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 _grip_factor = paddle_width / 70; // The grip originally was designed for a 70mm wide paddle. This factor scales the grip to the paddle width.
@@ -70,10 +70,10 @@ difference() {
                 mirror([0, 0, 0]) import("handle.svg");
 
             translate([-paddle_width/2, -50, -50 + epsilon]) cube([paddle_width, 200, 50]);
-            translate([-paddle_width/2, -50, _grip_height_from_plate - epsilon]) cube([paddle_width, 200, 50]);
-            translate([0, grip_hole_y_offset, -epsilon]) cylinder(d=grip_hole_diameter, h=_grip_height_from_plate + 2 * epsilon);
+            translate([-paddle_width/2, -50, paddle_thickness - epsilon]) cube([paddle_width, 200, 50]);
+            translate([0, grip_hole_y_offset, -epsilon]) cylinder(d=grip_hole_diameter, h=paddle_thickness + 2 * epsilon);
         }
-        translate([-paddle_width / 2, grip_end_length + grip_length, 0]) rounded_cube([paddle_width, paddle_length, _grip_height_from_plate], paddle_corner_radius);    
+        translate([-paddle_width / 2, grip_end_length + grip_length, 0]) rounded_cube([paddle_width, paddle_length, paddle_thickness], paddle_corner_radius);    
     }
     // Paddle text
     color("Turquoise") translate([0, grip_end_length + grip_length + paddle_length / 2, -epsilon]) linear_extrude(paddle_text_height + epsilon) rotate([0, 0, 90]) text(paddle_text, font=paddle_text_font, size=paddle_font_size, valign="center", halign="center");
@@ -82,7 +82,7 @@ difference() {
 
 
 // Paddle spikes
-color("Tomato") translate([-((spike_bottom_radius * 2 + spike_gap) * (_spike_count_x - 1)) / 2, grip_end_length + grip_length + (paddle_length / 2) -((spike_bottom_radius * 2 + spike_gap) * (_spike_count_y - 1)) / 2, _grip_height_from_plate])
+color("Tomato") translate([-((spike_bottom_radius * 2 + spike_gap) * (_spike_count_x - 1)) / 2, grip_end_length + grip_length + (paddle_length / 2) -((spike_bottom_radius * 2 + spike_gap) * (_spike_count_y - 1)) / 2, paddle_thickness])
 for(x = [0 : _spike_count_x - 1]) {
     for(y = [0 : _spike_count_y - 1]) {
         translate([x * (spike_bottom_radius * 2 + spike_gap), y * (spike_bottom_radius * 2 + spike_gap), 0]) spike();
