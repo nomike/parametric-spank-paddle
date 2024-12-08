@@ -26,7 +26,7 @@ spike_height = 3;
 spike_gap = 2;
 
 /* [Hidden] */
-epsilon = 1;
+epsilon = 0.001;
 
 // Calculated values
 _grip_radius = grip_diameter / 2;
