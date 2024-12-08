@@ -2,9 +2,8 @@
 $fn = $preview ? 20 : 64;
 
 /* [Grip] */
-grip_end_width = 20;
-grip_end_length = 10;
-grip_length = 85;
+grip_length = 95;
+
 // Higher values mean more comfort but it gets harder to print.
 grip_fn = 8;
 grip_hole_diameter = 15;
@@ -61,7 +60,7 @@ difference() {
     union() {
         // Grip v2
         difference() {
-            scale([_grip_factor, 1, 1]) translate([0, grip_length + grip_end_length + paddle_corner_radius + 4, paddle_thickness / 2]) rotate([90, 0, 0]) rotate_extrude(angle=360, convexity=2)
+            scale([_grip_factor, 1, 1]) translate([0, grip_length  + paddle_corner_radius + 4, paddle_thickness / 2]) rotate([90, 0, 0]) rotate_extrude(angle=360, convexity=2)
                 translate([35, 0, 0]) 
                 rotate([0, 0, 90])
                 mirror([0, 0, 0]) import("handle.svg");
@@ -70,16 +69,16 @@ difference() {
             translate([-paddle_width/2, -50, paddle_thickness - epsilon]) cube([paddle_width, 200, 50]);
             translate([0, grip_hole_y_offset, -epsilon]) cylinder(d=grip_hole_diameter, h=paddle_thickness + 2 * epsilon);
         }
-        translate([-paddle_width / 2, grip_end_length + grip_length, 0]) rounded_cube([paddle_width, paddle_length, paddle_thickness], paddle_corner_radius);    
+        translate([-paddle_width / 2,  grip_length, 0]) rounded_cube([paddle_width, paddle_length, paddle_thickness], paddle_corner_radius);    
     }
     // Paddle text
-    color("Turquoise") translate([0, grip_end_length + grip_length + paddle_length / 2, -epsilon]) linear_extrude(paddle_text_height + epsilon) rotate([0, 0, 90]) text(paddle_text, font=paddle_text_font, size=paddle_font_size, valign="center", halign="center");
+    color("Turquoise") translate([0, grip_length + paddle_length / 2, -epsilon]) linear_extrude(paddle_text_height + epsilon) rotate([0, 0, 90]) text(paddle_text, font=paddle_text_font, size=paddle_font_size, valign="center", halign="center");
 }
 
 
 
 // Paddle spikes
-color("Tomato") translate([-((spike_bottom_radius * 2 + spike_gap) * (_spike_count_x - 1)) / 2, grip_end_length + grip_length + (paddle_length / 2) -((spike_bottom_radius * 2 + spike_gap) * (_spike_count_y - 1)) / 2, paddle_thickness])
+color("Tomato") translate([-((spike_bottom_radius * 2 + spike_gap) * (_spike_count_x - 1)) / 2, grip_length + (paddle_length / 2) -((spike_bottom_radius * 2 + spike_gap) * (_spike_count_y - 1)) / 2, paddle_thickness])
 for(x = [0 : _spike_count_x - 1]) {
     for(y = [0 : _spike_count_y - 1]) {
         translate([x * (spike_bottom_radius * 2 + spike_gap), y * (spike_bottom_radius * 2 + spike_gap), 0]) spike();
