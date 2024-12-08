@@ -19,7 +19,7 @@ paddle_text = "XOXO";
 paddle_font_size = 36;
 // Custom fonts can be included in the code below.
 paddle_text_font = "Comic Neue:style=Bold";
-paddle_text_height = 0.4;
+paddle_text_height = 0.8;
 
 /* [Paddle Spikes] */
 spike_bottom_radius = 5;
