@@ -39,6 +39,7 @@ _grip_inner_circle_radius = _grip_radius * cos(180/grip_fn);
 _grip_height_from_plate = _grip_inner_circle_radius + ((grip_fn % 2) == 0 ? _grip_inner_circle_radius : (grip_diameter / 2));
 _spike_count_x = floor((paddle_width - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 _spike_count_y = floor((paddle_length - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
+grip_factor = paddle_width / 70; // The grip originally was designed for a 70mm wide paddle. This factor scales the grip to the paddle width.
 
 /* creates a single spike */
 module spike() {
@@ -63,7 +64,7 @@ difference() {
     union() {
         // Grip v2
         difference() {
-            translate([0, grip_length + grip_end_length + paddle_corner_radius + 4, grip_diameter / 2]) rotate([90, 0, 0]) rotate_extrude(angle=360, convexity=2)
+            scale([_grip_factor, 1, 1]) translate([0, grip_length + grip_end_length + paddle_corner_radius + 4, grip_diameter / 2]) rotate([90, 0, 0]) rotate_extrude(angle=360, convexity=2)
                 translate([35, 0, 0]) 
                 rotate([0, 0, 90])
                 mirror([0, 0, 0]) import("handle.svg");
