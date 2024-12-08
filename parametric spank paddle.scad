@@ -8,6 +8,8 @@ grip_diameter = 15;
 grip_length = 85;
 // Higher values mean more comfort but it gets harder to print.
 grip_fn = 8;
+grip_hole_diameter = 15;
+grip_hole_y_offset = -20;
 
 /* [Paddle size] */
 paddle_width = 70;
@@ -55,15 +57,22 @@ module rounded_cube(dimmensions, corner_radius) {
 // Include font
 use <ComicNeue-Bold.ttf>;
 
-// Grip end cube
-translate([-grip_end_width/2, 0, 0]) cube([grip_end_width, grip_end_length, _grip_height_from_plate]);
-
-// Grip
-translate([0, grip_end_length, _grip_inner_circle_radius]) rotate([-90, 0, 0]) rotate([0, 0, (180-(360/grip_fn))/2]) cylinder(d = grip_diameter, h = grip_length, $fn = grip_fn);
-
 // Paddle
 difference() {
-    translate([-paddle_width / 2, grip_end_length + grip_length, 0]) rounded_cube([paddle_width, paddle_length, _grip_height_from_plate], paddle_corner_radius);
+    union() {
+        // Grip v2
+        difference() {
+            translate([0, grip_length + grip_end_length + paddle_corner_radius + 4, grip_diameter / 2]) rotate([90, 0, 0]) rotate_extrude(angle=360, convexity=2)
+                translate([35, 0, 0]) 
+                rotate([0, 0, 90])
+                mirror([0, 0, 0]) import("handle.svg");
+
+            translate([-paddle_width/2, -50, -50 + epsilon]) cube([paddle_width, 200, 50]);
+            translate([-paddle_width/2, -50, _grip_height_from_plate - epsilon]) cube([paddle_width, 200, 50]);
+            translate([0, grip_hole_y_offset, -epsilon]) cylinder(d=grip_hole_diameter, h=_grip_height_from_plate + 2 * epsilon);
+        }
+        translate([-paddle_width / 2, grip_end_length + grip_length, 0]) rounded_cube([paddle_width, paddle_length, _grip_height_from_plate], paddle_corner_radius);    
+    }
     // Paddle text
     color("Turquoise") translate([0, grip_end_length + grip_length + paddle_length / 2, -epsilon]) linear_extrude(paddle_text_height + epsilon) rotate([0, 0, 90]) text(paddle_text, font=paddle_text_font, size=paddle_font_size, valign="center", halign="center");
 }
