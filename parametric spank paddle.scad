@@ -79,8 +79,12 @@ difference() {
 
 // Paddle spikes
 color("Tomato") translate([-((spike_bottom_radius * 2 + spike_gap) * (_spike_count_x - 1)) / 2, grip_length + (paddle_length / 2) -((spike_bottom_radius * 2 + spike_gap) * (_spike_count_y - 1)) / 2, paddle_thickness])
-for(x = [0 : _spike_count_x - 1]) {
-    for(y = [0 : _spike_count_y - 1]) {
-        translate([x * (spike_bottom_radius * 2 + spike_gap), y * (spike_bottom_radius * 2 + spike_gap), 0]) spike();
+if(_spike_count_x > 0 && _spike_count_y > 0) {
+    for(x = [0 : _spike_count_x - 1]) {
+        for(y = [0 : _spike_count_y - 1]) {
+            translate([x * (spike_bottom_radius * 2 + spike_gap), y * (spike_bottom_radius * 2 + spike_gap), 0]) spike();
+        }
     }
+} else {
+    echo("WARNING: Paddle is to small for adding spikes.");
 }
