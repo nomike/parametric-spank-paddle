@@ -13,7 +13,7 @@ grip_hole_y_offset = -20;
 
 /* [Paddle size] */
 paddle_width = 70;
-paddle_length = 150;
+paddle_length = 154;
 paddle_corner_radius = 10;
 
 /* [Paddle text] */
@@ -28,6 +28,7 @@ spike_bottom_radius = 5;
 spike_top_radius = 1;
 spike_height = 3;
 spike_gap = 2;
+spike_padding = 5;
 
 /* [Hidden] */
 epsilon = 0.001;
@@ -36,8 +37,8 @@ epsilon = 0.001;
 _grip_radius = grip_diameter / 2;
 _grip_inner_circle_radius = _grip_radius * cos(180/grip_fn);
 _grip_height_from_plate = _grip_inner_circle_radius + ((grip_fn % 2) == 0 ? _grip_inner_circle_radius : (grip_diameter / 2));
-_spike_count_x = floor(paddle_width / (spike_bottom_radius * 2 + spike_gap));
-_spike_count_y = floor(paddle_length / (spike_bottom_radius * 2 + spike_gap));
+_spike_count_x = floor((paddle_width - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
+_spike_count_y = floor((paddle_length - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 
 /* creates a single spike */
 module spike() {
