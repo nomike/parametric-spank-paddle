@@ -39,7 +39,7 @@ _grip_inner_circle_radius = _grip_radius * cos(180/grip_fn);
 _grip_height_from_plate = _grip_inner_circle_radius + ((grip_fn % 2) == 0 ? _grip_inner_circle_radius : (grip_diameter / 2));
 _spike_count_x = floor((paddle_width - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 _spike_count_y = floor((paddle_length - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
-grip_factor = paddle_width / 70; // The grip originally was designed for a 70mm wide paddle. This factor scales the grip to the paddle width.
+_grip_factor = paddle_width / 70; // The grip originally was designed for a 70mm wide paddle. This factor scales the grip to the paddle width.
 
 /* creates a single spike */
 module spike() {
