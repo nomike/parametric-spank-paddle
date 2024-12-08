@@ -1,5 +1,5 @@
 /* [General] */
-$fn = $preview ? 20 : 64;
+$fn = $preview ? 20 : 12;
 
 /* [Grip] */
 grip_length = 95;
@@ -36,6 +36,10 @@ epsilon = 0.001;
 _spike_count_x = floor((paddle_width - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 _spike_count_y = floor((paddle_length - (2 * spike_padding)) / (spike_bottom_radius * 2 + spike_gap));
 _grip_factor = paddle_width / 70; // The grip originally was designed for a 70mm wide paddle. This factor scales the grip to the paddle width.
+
+if((paddle_width / 3) < grip_hole_diameter) {
+    echo("WARNING: Grip hole might be too small.");
+}
 
 /* creates a single spike */
 module spike() {
