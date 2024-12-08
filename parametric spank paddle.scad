@@ -1,3 +1,5 @@
+/* [General] */
+$fn = $preview ? 20 : 64;
 
 /* [Grip] */
 grip_end_width = 20;
