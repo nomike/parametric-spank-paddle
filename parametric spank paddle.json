@@ -1,8 +1,7 @@
 {
     "fileFormatVersion": "1",
     "parameterSets": {
-        "ThankYouMistress": {
-            "grip_fn": "8",
+        "THANK YOU MISTRESS": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -21,7 +20,6 @@
             "spike_top_radius": "1"
         },
         "XOXO": {
-            "grip_fn": "8",
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -39,8 +37,7 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "ThankYouMaster": {
-            "grip_fn": "8",
+        "THANK YOU MASTER": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -58,16 +55,15 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "ILoveYou": {
-            "grip_fn": "8",
+        "I Love You": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
             "paddle_corner_radius": "10",
-            "paddle_font_size": "35",
+            "paddle_font_size": "40",
             "paddle_length": "154",
-            "paddle_text": "i O u",
-            "paddle_text_font": "CookieMonster",
+            "paddle_text": "I ♥ U",
+            "paddle_text_font": "Liberation Sans:style=Bold",
             "paddle_text_height": "0.80000000000000004",
             "paddle_thickness": "15",
             "paddle_width": "70",
@@ -77,8 +73,7 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "ThankYou": {
-            "grip_fn": "8",
+        "THANK YOU": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -96,8 +91,7 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "ThankYouDaddy": {
-            "grip_fn": "8",
+        "THANK YOU DADDY": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -115,8 +109,7 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "ThankYouMommy": {
-            "grip_fn": "8",
+        "THANK YOU MOMMY": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -134,8 +127,7 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "Brat": {
-            "grip_fn": "8",
+        "BRAT": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -153,8 +145,7 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "Slut": {
-            "grip_fn": "8",
+        "SLUT": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -172,8 +163,7 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "NaughtySub": {
-            "grip_fn": "8",
+        "NAUGHTY SUB": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -191,8 +181,7 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "YourAdCouldGoHere": {
-            "grip_fn": "8",
+        "Your ad could go here": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
@@ -210,34 +199,14 @@
             "spike_padding": "5",
             "spike_top_radius": "1"
         },
-        "FuckMe": {
-            "grip_fn": "8",
+        "FUCK ME": {
             "grip_hole_diameter": "15",
             "grip_hole_y_offset": "-20",
             "grip_length": "95",
             "paddle_corner_radius": "10",
             "paddle_font_size": "20",
             "paddle_length": "154",
-            "paddle_text": "Fuck Me!",
-            "paddle_text_font": "Liberation Sans:style=Bold",
-            "paddle_text_height": "0.80000000000000004",
-            "paddle_thickness": "15",
-            "paddle_width": "70",
-            "spike_bottom_radius": "5",
-            "spike_gap": "2",
-            "spike_height": "3",
-            "spike_padding": "5",
-            "spike_top_radius": "1"
-        },
-        "ThankYouMistress": {
-            "grip_fn": "8",
-            "grip_hole_diameter": "15",
-            "grip_hole_y_offset": "-20",
-            "grip_length": "95",
-            "paddle_corner_radius": "10",
-            "paddle_font_size": "15",
-            "paddle_length": "154",
-            "paddle_text": "THANK YOU MISTRESS",
+            "paddle_text": "FUCK ME!",
             "paddle_text_font": "Liberation Sans:style=Bold",
             "paddle_text_height": "0.80000000000000004",
             "paddle_thickness": "15",
