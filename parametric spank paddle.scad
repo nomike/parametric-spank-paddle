@@ -1,3 +1,7 @@
+include<fontmetrics/fontmetrics.scad>;
+use <CookieMonster.ttf>;
+
+
 /* [General] */
 $fn = $preview ? 20 : 64;
 
@@ -5,7 +9,6 @@ $fn = $preview ? 20 : 64;
 grip_length = 95;
 
 // Higher values mean more comfort but it gets harder to print.
-grip_fn = 8;
 grip_hole_diameter = 15;
 grip_hole_y_offset = -20;
 
@@ -16,10 +19,10 @@ paddle_corner_radius = 10;
 paddle_thickness = 15;
 
 /* [Paddle text] */
-paddle_text = "XOXO";
-paddle_font_size = 36;
+paddle_text = "i O u";
+paddle_font_size = 35;
 // Custom fonts can be included in the code below.
-paddle_text_font = "Comic Neue:style=Bold";
+paddle_text_font = "CookieMonster";
 paddle_text_height = 0.8;
 
 /* [Paddle Spikes] */
@@ -46,6 +49,13 @@ module spike() {
     cylinder(r1 = spike_bottom_radius, r2 = spike_top_radius, h=spike_height);
 }
 
+module draw_text() {
+    _tb = measureWrappedTextBounds(paddle_text,font=paddle_text_font,size=paddle_font_size,spacing=1,linespacing=1,indent=0,width=paddle_length,halign="center");
+    rotate([0, 0, 90])
+    translate([0, -ascender(paddle_text_font, size=paddle_font_size) + _tb[1][1]/2, 0])
+    drawWrappedText(paddle_text,font=paddle_text_font,size=paddle_font_size,spacing=1,linespacing=1,indent=0,width=paddle_length,halign="center");
+}
+
 /* Creates a cube which is rounded off on the x and y axis */
 module rounded_cube(dimmensions, corner_radius) {
     hull() {
@@ -55,9 +65,6 @@ module rounded_cube(dimmensions, corner_radius) {
         translate([0 + corner_radius, 0 + corner_radius, 0]) cylinder(r = corner_radius, h = dimmensions[2]);
     }
 }
-
-// Include font
-use <ComicNeue-Bold.ttf>;
 
 // Paddle
 difference() {
@@ -76,7 +83,7 @@ difference() {
         translate([-paddle_width / 2,  grip_length, 0]) rounded_cube([paddle_width, paddle_length, paddle_thickness], paddle_corner_radius);    
     }
     // Paddle text
-    color("Turquoise") translate([0, grip_length + paddle_length / 2, -epsilon]) linear_extrude(paddle_text_height + epsilon) rotate([0, 0, 90]) text(paddle_text, font=paddle_text_font, size=paddle_font_size, valign="center", halign="center");
+    translate([0, 0, 0]) color("Turquoise") translate([0, grip_length + paddle_length / 2, -epsilon]) draw_text();
 }
 
 
