@@ -1,6 +1,4 @@
 include<fontmetrics/fontmetrics.scad>;
-use <CookieMonster.ttf>;
-
 
 /* [General] */
 $fn = $preview ? 20 : 64;
