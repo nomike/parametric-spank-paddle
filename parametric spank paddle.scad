@@ -9,7 +9,6 @@ $fn = $preview ? 20 : 64;
 grip_length = 95;
 
 // Higher values mean more comfort but it gets harder to print.
-grip_fn = 8;
 grip_hole_diameter = 15;
 grip_hole_y_offset = -20;
 
