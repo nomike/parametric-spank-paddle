@@ -216,6 +216,24 @@
             "spike_height": "3",
             "spike_padding": "5",
             "spike_top_radius": "1"
+        },
+        "(blank)": {
+            "grip_hole_diameter": "15",
+            "grip_hole_y_offset": "-20",
+            "grip_length": "95",
+            "paddle_corner_radius": "10",
+            "paddle_font_size": "40",
+            "paddle_length": "154",
+            "paddle_text": " ",
+            "paddle_text_font": "Liberation Sans:style=Bold",
+            "paddle_text_height": "0.80000000000000004",
+            "paddle_thickness": "15",
+            "paddle_width": "70",
+            "spike_bottom_radius": "5",
+            "spike_gap": "2",
+            "spike_height": "3",
+            "spike_padding": "5",
+            "spike_top_radius": "1"
         }
     }
 }
