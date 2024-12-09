@@ -52,8 +52,6 @@ module spike() {
 
 module draw_text() {
     _tb = measureWrappedTextBounds(paddle_text,font=paddle_text_font,size=paddle_font_size,spacing=1,linespacing=1,indent=0,width=paddle_length,halign="center");
-    echo("Text bounds: ", _tb);
-
     rotate([0, 0, 90])
     translate([0, -ascender(paddle_text_font, size=paddle_font_size) + _tb[1][1]/2, 0])
     drawWrappedText(paddle_text,font=paddle_text_font,size=paddle_font_size,spacing=1,linespacing=1,indent=0,width=paddle_length,halign="center");
