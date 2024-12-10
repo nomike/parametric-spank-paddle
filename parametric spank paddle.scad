@@ -17,11 +17,11 @@ paddle_corner_radius = 10;
 paddle_thickness = 15;
 
 /* [Paddle text] */
-paddle_text = "i O u";
+paddle_text = "I ♥ U";
 paddle_font_size = 35;
 // Custom fonts can be included in the code below.
-paddle_text_font = "CookieMonster";
-paddle_text_height = 0.8;
+paddle_text_font = "Liberation Sans:style=Bold";
+paddle_text_height = 1.0;
 
 /* [Paddle Spikes] */
 spike_bottom_radius = 5;
