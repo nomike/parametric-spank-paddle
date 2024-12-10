@@ -81,7 +81,7 @@ difference() {
         translate([-paddle_width / 2,  grip_length, 0]) rounded_cube([paddle_width, paddle_length, paddle_thickness], paddle_corner_radius);    
     }
     // Paddle text
-    translate([0, 0, 0]) color("Turquoise") translate([0, grip_length + paddle_length / 2, -epsilon]) draw_text();
+    translate([0, 0, 0]) color("Turquoise") translate([0, grip_length + paddle_length / 2, -epsilon]) linear_extrude(paddle_text_height) draw_text();
 }
 
 
